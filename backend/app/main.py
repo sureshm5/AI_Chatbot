@@ -16,7 +16,7 @@ app.add_middleware(
     CORSMiddleware,
     allow_origins=[
         "http://localhost:5173",
-        "https://YOUR-VERCEL-APP.vercel.app",
+        "https://aichatbot-jet-nine.vercel.app",
     ],
     allow_credentials=True,
     allow_methods=["*"],
