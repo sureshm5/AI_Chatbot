@@ -4,7 +4,7 @@ from app.memory.cache import get_cache, save_cache
 from app.orchestrator.intent import detect_intent
 from app.llm.model_manager import chat
 
-from app.rag.embedder import model
+from app.rag.embedder import get_model
 from app.rag.vector_store import search, has_documents
 
 def process(latest_message: str, prompt: str):
@@ -57,7 +57,7 @@ def process(latest_message: str, prompt: str):
 
     if use_rag:
 
-        query = model.encode([latest_message])[0]
+        query = get_model().encode([latest_message])[0]
 
         context = search(query)
 
